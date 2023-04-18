@@ -1,10 +1,9 @@
 package study.web.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
-import study.web.api.model.Usuario;
 import study.web.api.repository.UserRepository;
+import study.web.api.model.Usuario;
 
 import java.util.List;
 
