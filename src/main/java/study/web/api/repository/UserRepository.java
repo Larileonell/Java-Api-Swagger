@@ -8,27 +8,36 @@ import java.util.List;
 
 @Repository
 public class UserRepository {
-    public void save (Usuario usuario){
+    public void save(Usuario usuario) {
         if (usuario.getId() == null)
             System.out.println("SAVE- Recebendo o usuário na camada de repositorio");
         else
             System.out.println("UPDATE - Recebendo o usuário na camada de repositorio");
         System.out.println(usuario);
     }
-    public void deleteById  (Integer id){
+
+    public void deleteById(Integer id) {
         System.out.printf(String.format("DELETE/ID - Recebendo o id para excluir um usuário%n", id));
         System.out.println(id);
     }
-    public List<Usuario> ListAll(){
+
+    public List<Usuario> ListAll() {
         System.out.println("Listando usuários do sistema");
         List<Usuario> usuarios = new ArrayList<>();
         usuarios.add(new Usuario("larissa", "harrystyles"));
-        usuarios.add(new Usuario("joanderson","lovelly"));
+        usuarios.add(new Usuario("joanderson", "lovelly"));
         return usuarios;
     }
-    public Usuario finById(Integer id){
+
+    public Usuario finById(Integer id) {
         System.out.println(String.format("FIND/id - Recebendo o id: %d para localizar um usuário", id));
-        return new Usuario("gleyson","password");
+        return new Usuario("gleyson", "password");
     }
+
+    public Usuario findByUsername(String username) {
+        System.out.println(String.format("FIND/username - Recebendo o username:", username));
+        return new Usuario("lari", "password");
+    }
+
 
 }
